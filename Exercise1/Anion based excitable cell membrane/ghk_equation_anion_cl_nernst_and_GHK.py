@@ -42,6 +42,6 @@ plt.xticks([0.1, 1, 10, 100],["0.1", "1", "10", "100"])
 plt.xlabel("[Cl] (Outside)")
 plt.ylabel("Vm (Membrane Potential)")
 plt.title("Vm vs [Cl]")
-plt.savefig("GHK_anion_cl_9_updated_new.png")
+plt.savefig("GHK_anion_cl_9_no_deviation_nernst_and_GHK.png")
 plt.show()
 
