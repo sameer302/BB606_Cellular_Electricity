@@ -21,7 +21,7 @@ for alpha in alphas:
     )
 
 plt.xscale("log")
-plt.xticks([0.1, 1, 10, 100],["0.1", "1", "10", "100"])
+plt.xticks([0.1, 1, 10, 100], ["0.1", "1", "10", "100"]) # here if we didnt write the second array then the ticks will be named as 10^-1, 10^0, 10^1, 10^2
 plt.xlabel("[K] (Outside)")
 plt.ylabel("Vm (Membrane Potential)")
 plt.title("Vm vs [K] for different alpha values")
