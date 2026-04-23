@@ -1,7 +1,7 @@
 import numpy as np # math + arrays
 import matplotlib.pyplot as plt # plotting
 
-k_out = np.linspace(0.1, 1000, 10000) # 10,000 points from 1 to 1000
+k_out = np.linspace(0.1, 1000, 10000) # 10,000 points from 0.1 to 1000
 alphas = [0.0001, 0.001, 0.01, 0.03, 0.1, 0.2]
 
 for alpha in alphas:
