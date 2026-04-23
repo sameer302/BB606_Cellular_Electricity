@@ -1,17 +1,17 @@
-import numpy as np # math + arrays
-import matplotlib.pyplot as plt # plotting
+import sympy as sp
 
-cl_out = np.linspace(0.1, 1000, 10000) # 10,000 points from 1 to 1000
-k = 4 # Using k here to find what value of Pcl will give us the negative potential peak as -60mV
-vm = 58*np.log10((1000 + k*5)/(30 + k*cl_out))
-# AFter hit and trial we find that the value of k which gives us the peak negative potential as -60mV is 9. 
+k = sp.symbols('k')
 
-plt.plot(cl_out, vm)
-plt.xscale("log")
-plt.xticks([0.1, 1, 10, 100],["0.1", "1", "10", "100"])
-plt.xlabel("[Cl] (Outside)")
-plt.ylabel("Vm (Membrane Potential)")
-plt.title("Vm vs [Cl]")
-plt.savefig("GHK_anion_cl_4.png")
-plt.show()
+expr = 58 * sp.log((1000 + 5*k)/(30 + 70*k), 10) + 60
 
+solution = sp.nsolve(expr, 1)
+
+print(solution)
+
+''' As we know that Action Potentials are generated not by change in concentrations but by change in permeability. 
+So we keep the concentrations same as they were at RMP and set the Vm to -60 and keeping the permeability of Cl as unknown,
+we find the value of permeability of Cl (to simplify the equation we cancelled the powers of 10 from the GHK equation and so in the
+equation we calculate the value of k but in reality the permeability will be k * 10 ^ (-8)). 
+
+By solving the above equation we get the value of k as 680.38 (approx) and so we will use this value further. 
+ '''
