@@ -15,6 +15,9 @@ Using GHK: Vm = 58 * log10( (4450) / (30 + 690*1000) ), neglecting 30 here = 58 
 Using Nernst: Vm = 58 * log10(5/1000)
 So the deviation term = + 58 * log10(1.28) ~ 6.218
 We subtract this deviation term from the GHK equation to align both curves at high concentration.
+
+What does this mean biologically is that, its not always true that fir higher external concentrations Vm will behanve exactly as nernst potential, it will follow similar trend for sure
+but its not necessary that they coincide because there may be some deviation term due to other ion contribution which is significant. 
  '''
 ecl = 58*np.log10(5/cl_out)
 
